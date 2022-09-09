@@ -1,0 +1,48 @@
+*,
+::before,
+::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.logement-container {
+
+}
+.logement-container .hote {
+    display: flex;
+    justify-content: space-between;
+}
+.logement-container .hote .bloc-title {
+    color: #FF6060;
+}
+
+.logement-container .hote .bloc-host {
+    display: flex;
+    align-items: center;
+}
+.logement-container .hote .bloc-host p {
+    color: #FF6060;
+    width: 40%;
+}
+.logement-container .bloc-host img {
+    width: 64px;
+    height: 64px;  
+    border-radius: 50%;
+    object-fit: contain;
+}
+/* .logement-container .hote .bloc-tag-etoile {
+    display: flex;
+    justify-content: space-between;
+} */
+
+.logement-container .accordeon-container {
+    display: flex;
+    justify-content: space-between;
+    margin: 24px 0 14px;
+}
+
+.colorful-star {
+    fill: #FF6060;
+    /* background-image: #FF6060 ; */
+}

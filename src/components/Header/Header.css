@@ -1,0 +1,40 @@
+*,
+::before,
+::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.comp-header {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 40px;
+}
+.comp-header img {
+  width: 120px;
+  object-fit: contain;
+}
+.comp-header nav.navbar {
+  font-size: 24px;
+  /* margin: 10px 0; */  
+}
+.comp-header nav.navbar a {
+  color: #FF6060;
+  margin: 10px;
+  text-decoration: none;
+}
+
+/* .activeLink {
+  text-decoration: underline;
+} */
+@media all and (max-width: 768px) {
+  .comp-header img {
+    width: 90px;
+  }
+
+  .comp-header nav.navbar a {
+   font-size: 12px;
+   text-transform: uppercase; 
+  }
+}

@@ -1,0 +1,19 @@
+*,
+::before,
+::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+nav.navbar {
+  font-size: 24px;
+  display: flex;
+  justify-content: center;
+  margin: 10px 0;
+}
+
+nav.navbar a {
+  color: red;
+  margin: 10px;
+}

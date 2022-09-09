@@ -1,0 +1,50 @@
+*,
+::before,
+::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.error {
+    color: #FF6060;
+    text-align: center;
+}
+
+/* .error p.erreur404 {
+font-size: 288px;
+} */
+.error img {
+    width: 310px;
+    object-fit: contain;
+}
+
+.error p.text {
+    font-size: 36px;
+    line-height: 51px;
+    margin: 50px 0 100px;
+}
+
+.error p:last-child {
+    font-size: 18px;
+    text-decoration: underline;
+}
+
+@media all and (max-width: 768px) {
+    .error {
+        margin-top: 180px;
+    }
+    .error img {
+        width: 120px;    
+    }
+    .error p.text {
+        font-size: 18px;
+        margin-top: 11px;
+        /* line-height: 51px;
+        margin: 50px 0 100px; */
+    }
+    .error p:last-child {
+        font-size: 14px;
+        font-weight: 500;  
+    }
+}
