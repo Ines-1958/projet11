@@ -36,7 +36,7 @@ function App() {
         <Route path="/tags" element={<Tags />} />
         <Route path="/accordeon" element={<Accordeon />} />
         <Route path="/notation" element={<Rating />} />
-        {/* <Route path="" element={<Erreur />} /> */}
+        {/* <Route path="/erreur" element={<Erreur />} />  */}
       </Routes>
 
       <Footer />

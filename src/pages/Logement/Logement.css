@@ -7,29 +7,28 @@
 }
 
 .logement-container {
-
 }
 .logement-container .hote {
-    display: flex;
-    justify-content: space-between;
+  display: flex;
+  justify-content: space-between;
 }
 .logement-container .hote .bloc-title {
-    color: #FF6060;
+  color: #ff6060;
 }
 
 .logement-container .hote .bloc-host {
-    display: flex;
-    align-items: center;
+  display: flex;
+  align-items: center;
 }
 .logement-container .hote .bloc-host p {
-    color: #FF6060;
-    width: 40%;
+  color: #ff6060;
+  width: 40%;
 }
 .logement-container .bloc-host img {
-    width: 64px;
-    height: 64px;  
-    border-radius: 50%;
-    object-fit: contain;
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  object-fit: contain;
 }
 /* .logement-container .hote .bloc-tag-etoile {
     display: flex;
@@ -37,12 +36,29 @@
 } */
 
 .logement-container .accordeon-container {
-    display: flex;
-    justify-content: space-between;
-    margin: 24px 0 14px;
+  display: flex;
+  justify-content: space-between;
+  margin: 24px 0 14px;
 }
 
 .colorful-star {
-    fill: #FF6060;
-    /* background-image: #FF6060 ; */
+  fill: #ff6060;
+  /* background-image: #FF6060 ; */
+}
+
+@media all and (max-width: 768px) {
+  .logement-container .hote .bloc-title h1 {
+    font-size: 18px;
+  }
+  .logement-container .hote .bloc-title p {
+    font-size: 14px;
+  }
+
+  .logement-container .hote .bloc-host p {
+    font-size: 12px;
+  }
+  .logement-container .bloc-host img {
+    width: 32px;
+    height: 32px;
+  }
 }

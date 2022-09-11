@@ -1,0 +1,14 @@
+*,
+::before,
+::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+@media all and (max-width: 768px) {
+  .notation .note-etoiles img {
+    width: 15px;
+    height: 15px;
+  }
+}

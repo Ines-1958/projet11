@@ -1,58 +1,78 @@
-*, ::before, ::after {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
+*,
+::before,
+::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
 .galerie-container {
-    position: relative;
-    margin-bottom: 30px;
-    height: 400px;
-    max-height: 400px;
+  position: relative;
+  margin-bottom: 30px;
+  height: 415px;
+  max-height: 415px;
 }
 
 .galerie-container .galerie {
-    margin: auto;
-    /* max-width: 600px; */
-    /* position: relative; */
+  margin: auto;
+
+  /* position: relative; */
 }
 
 .galerie-container .galerie img.img-galerie {
-    width: 100%;
-    height: 400px;
-    object-fit: cover;
-    border-radius: 25px;
+  width: 100%;
+  height: 415px;
+  object-fit: cover;
+  border-radius: 25px;
 }
 .galerie-container .galerie .img-position {
-    position: absolute;
-    font-size: 18px;
-    line-height: 142.6%;
-    text-align: center;
-    color: #FFFFFF;
-    /* left: 48.95%; */
-    right: 49.11%;
-    top: 86.19%;
-    bottom: 6.01%;
-}
-
-.galerie-container .previous, 
-.galerie-container .next {
-    /* cursor: pointer;
-    font-size: 30px;
-    position: fixed;
-    top: 50%;
-    z-index: 10;
-    left: 0; */
+  position: absolute;
+  font-size: 18px;
+  line-height: 142.6%;
+  text-align: center;
+  color: #ffffff;
+  /* left: 48.95%; */
+  right: 49.11%;
+  top: 86.19%;
+  bottom: 6.01%;
 }
 
 .galerie-container .btn {
-    background: none;
-    border: none;
-    color: #FFFFFF;
-    font-size: 60px;
-    position: absolute;
-    top: 50%;
+  background: none;
+  border: none;
+  color: #ffffff;
+  font-size: 60px;
+  position: absolute;
+  z-index: 10;
+  /* top: 50%; */
+  top: calc(50% - 30px);
 }
 .galerie-container .next {
-    right: 0;
+  right: 0;
+}
+
+.chevron-visible {
+  display: block;
+}
+.chevron-hidden {
+  display: none;
+}
+
+@media all and (max-width: 768px) {
+  .galerie-container {
+    height: 255px;
+    max-height: 255px;
+  }
+
+  .galerie-container .galerie img.img-galerie {
+    height: 255px;
+  }
+
+  .galerie-container .btn {
+    font-size: 30px;
+    top: calc(50% - 15px);
+  }
+  .galerie-container .galerie .img-position {
+    display: none;
+  }
 }
