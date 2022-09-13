@@ -21,4 +21,8 @@
   .container-propos .bgImg {
     object-fit: cover;
   }
+  .container-propos .accordeon {
+    width: 100%;
+    margin: 1rem auto;
+  }
 }

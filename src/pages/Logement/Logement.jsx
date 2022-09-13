@@ -26,7 +26,7 @@ export default function Logement() {
       }
 
       const json = await response.json()
-      // setjsonData(json)
+
       const idFiltered = json.filter((heberg) => heberg.id === id)
       console.log(idFiltered)
       setjsonData(idFiltered)
@@ -52,6 +52,11 @@ export default function Logement() {
                 <p key={index} id={item.location}>
                   {item.location}
                 </p>
+                <ul className="list-tags">
+                  {item.tags.map((tag, index) => (
+                    <Tags tags={tag} key={index} id={id} />
+                  ))}
+                </ul>
               </div>
               <div className="home-host">
                 <div className="bloc-host">
@@ -64,12 +69,6 @@ export default function Logement() {
                 <Rating />
               </div>
             </div>
-
-            <ul className="list-tags">
-              {item.tags.map((tag, index) => (
-                <Tags tags={tag} key={index} id={id} />
-              ))}
-            </ul>
 
             <div className="accordeon-container">
               <Accordeon title={'Description'} key={item.id} id={item.id}>

@@ -11,18 +11,21 @@
 .logement-container .hote {
   display: flex;
   justify-content: space-between;
+  gap: 16px;
 }
 .logement-container .hote .bloc-title {
   color: #ff6060;
 }
-
+.logement-container .hote .home-host {
+}
 .logement-container .hote .bloc-host {
   display: flex;
   align-items: center;
+  /* gap: 5px; */
 }
 .logement-container .hote .bloc-host p {
   color: #ff6060;
-  width: 40%;
+  width: 50%;
 }
 .logement-container .bloc-host img {
   width: 64px;
@@ -47,6 +50,9 @@
 }
 
 @media all and (max-width: 768px) {
+  .logement-container .hote {
+    flex-direction: column;
+  }
   .logement-container .hote .bloc-title h1 {
     font-size: 18px;
   }
@@ -54,11 +60,20 @@
     font-size: 14px;
   }
 
+  /* .logement-container .hote .bloc-host {
+    gap: 5px;
+  } */
   .logement-container .hote .bloc-host p {
     font-size: 12px;
   }
   .logement-container .bloc-host img {
     width: 32px;
     height: 32px;
+  }
+  .logement-container .hote .home-host {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-between;
+    align-items: center;
   }
 }

@@ -1,8 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import { useParams } from 'react-router-dom'
 import '../Galerie/Galerie.css'
-// import chevronLeft from '../../assets/chevronLeft.png'
-// import chevronRight from '../../assets/chevronRight.png'
 
 export default function Galerie(props) {
   const { id } = useParams()
@@ -15,7 +13,7 @@ export default function Galerie(props) {
   useEffect(() => {
     const getHome = async () => {
       const response = await fetch('/donnees-json/logements.json')
-      // console.log(response)
+
       if (!response.ok) {
         const message = `An error has occured: ${response.status}`
         throw new Error(message)
@@ -36,10 +34,6 @@ export default function Galerie(props) {
             let galerieLength = image.pictures.length
             let total = image.pictures
 
-            // const uniqueImg = () => {
-            //   {galerieLength >= 1 ? 'chevron-visible' : 'chevron-hidden'};
-            // }
-
             const nextImage = () => {
               setimgPrincipale(
                 imgPrincipale === galerieLength - 1 ? 0 : imgPrincipale + 1
@@ -50,7 +44,6 @@ export default function Galerie(props) {
               setimgPrincipale(
                 imgPrincipale === 0 ? galerieLength - 1 : imgPrincipale - 1
               )
-              // console.log(imgPrincipale)
             }
 
             return (

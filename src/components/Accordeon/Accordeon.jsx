@@ -6,17 +6,10 @@ export default function Accordeon(props) {
   console.log(props)
 
   const [toggle, setToggle] = useState(false)
-  const [hauteur, setHauteur] = useState() //Hauteur de l'élément
 
   const toggleAccordeon = () => {
     setToggle(!toggle)
   }
-
-  const refHauteur = useRef()
-
-  // useEffect(() => {
-  //     setHauteur(`${refHauteur.current.scrollHeight}px`) //Pour remplir avec la hauteur de l'élément
-  // }, [])
 
   return (
     <div className="accordeon">
@@ -25,11 +18,7 @@ export default function Accordeon(props) {
         <img src={chevronDown} className={toggle ? 'rotation' : ''} alt="" />
       </div>
 
-      <div
-        // ref={refHauteur}
-        className={toggle ? 'accordeon-toggle animated visible' : 'hidden'}
-        // style={{height: toggle ? `${hauteur}` : "0px"}}
-      >
+      <div className={toggle ? 'accordeon-toggle animated visible' : 'hidden'}>
         <div className="toggle-content" aria-hidden={toggle ? 'true' : 'false'}>
           {props.children}
         </div>

@@ -19,7 +19,7 @@ function App() {
 
 
   return (
-  <div>
+  <div className='router'>
       
       <Header />
       
@@ -27,15 +27,15 @@ function App() {
         <Route path="/" element={<Home />} />
         {/* <Route path="/propos/:id" element={<Apropos />} /> */}
         <Route path="*" element={<Erreur />} />
-        <Route path="/galerie" element={<Galerie />} />
+        {/* <Route path="/galerie" element={<Galerie />} />
         <Route path="/footer" element={<Footer />} />
-        <Route path="/header" element={<Header />} />
+        <Route path="/header" element={<Header />} /> */}
         <Route path="/propos" element={<Apropos />} />
-        <Route path="/carte" element={<CarteLocation />} />
+        {/* <Route path="/carte" element={<CarteLocation />} /> */}
         <Route path="/logement/:id" element={<Logement />} />
-        <Route path="/tags" element={<Tags />} />
-        <Route path="/accordeon" element={<Accordeon />} />
-        <Route path="/notation" element={<Rating />} />
+        {/* <Route path="/tags" element={<Tags />} /> */}
+        {/* <Route path="/accordeon" element={<Accordeon />} />
+        <Route path="/notation" element={<Rating />} /> */}
         {/* <Route path="/erreur" element={<Erreur />} />  */}
       </Routes>
 

@@ -13,7 +13,7 @@ export default function Rating() {
   useEffect(() => {
     const getHome = async () => {
       const response = await fetch('/donnees-json/logements.json')
-      console.log(response)
+
       if (!response.ok) {
         const message = `An error has occured: ${response.status}`
         throw new Error(message)
@@ -21,8 +21,6 @@ export default function Rating() {
 
       const json = await response.json()
       setjsonData(json)
-
-      console.log(json)
     }
     getHome()
   }, [])
@@ -43,6 +41,7 @@ export default function Rating() {
                   return (
                     <img
                       key={`${item}-${index}`}
+                      id={`${item}-${index}`}
                       src={imgStar}
                       alt=""
                       className="colorful-star"
