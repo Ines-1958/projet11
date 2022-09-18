@@ -32,12 +32,12 @@ self.__precacheManifest = [
     "url": "/projet11/static/media/etoileCouleur.0bec8c6d.svg"
   },
   {
-    "revision": "eeb3ca706ca941867e31be8a73843c25",
-    "url": "/projet11/static/media/bgImage.eeb3ca70.png"
-  },
-  {
     "revision": "81575d8d2691f5e261bf0e1b279fc88e",
     "url": "/projet11/static/media/bgImg.81575d8d.png"
+  },
+  {
+    "revision": "eeb3ca706ca941867e31be8a73843c25",
+    "url": "/projet11/static/media/bgImage.eeb3ca70.png"
   },
   {
     "revision": "f095cd139dc2e1d11de674b7f997f60a",
