@@ -1,13 +1,9 @@
 import React from 'react'
 import { useState, useEffect } from 'react'
-import { useNavigate, useParams } from 'react-router-dom'
-import { Link, NavLink } from 'react-router-dom'
+import { NavLink } from 'react-router-dom'
 import '../CarteLocation/CarteLocation.css'
 
 export default function CarteLocation() {
-  const { id } = useParams()
-  console.log(id)
-
   const [jsonData, setjsonData] = useState([])
 
   useEffect(() => {
@@ -30,11 +26,15 @@ export default function CarteLocation() {
       <div className="content-location">
         {jsonData &&
           jsonData.map((home, index) => (
-            <NavLink className="carte-location" to={`/logement/${home.id}`}>
+            <NavLink
+              key={index}
+              className="carte-location"
+              to={`/logement/${home.id}`}
+            >
               <div
                 className="location"
-                key={`${home}-${index}`}
-                id={`${home}-${index}`}
+                key={`${'home'}-${index}`}
+                id={`${'home'}-${index}`}
               >
                 {home.title}
               </div>

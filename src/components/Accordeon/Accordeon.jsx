@@ -1,10 +1,8 @@
-import React, { useState, useEffect, useRef } from 'react'
+import React, { useState } from 'react'
 import '../Accordeon/Accordeon.css'
 import chevronDown from '../../assets/chevronDown.png'
 
 export default function Accordeon(props) {
-  console.log(props)
-
   const [toggle, setToggle] = useState(false)
 
   const toggleAccordeon = () => {

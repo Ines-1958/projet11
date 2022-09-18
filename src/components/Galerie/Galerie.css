@@ -15,8 +15,6 @@
 
 .galerie-container .galerie {
   margin: auto;
-
-  /* position: relative; */
 }
 
 .galerie-container .galerie img.img-galerie {
@@ -31,7 +29,6 @@
   line-height: 142.6%;
   text-align: center;
   color: #ffffff;
-  /* left: 48.95%; */
   right: 49.11%;
   top: 86.19%;
   bottom: 6.01%;
@@ -44,7 +41,6 @@
   font-size: 60px;
   position: absolute;
   z-index: 10;
-  /* top: 50%; */
   top: calc(50% - 30px);
 }
 .galerie-container .next {

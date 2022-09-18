@@ -1,7 +1,7 @@
 import React from 'react'
 import '../Apropos/Apropos.css'
 import bgApropos from './bgApropos.png'
-import { useState, useEffect } from 'react'
+import { useState } from 'react'
 import Accordeon from '../../components/Accordeon/Accordeon'
 
 export default function Apropos() {

@@ -3,23 +3,38 @@ import Tags from '../../components/Tags/Tags'
 import { useParams, useNavigate } from 'react-router-dom'
 import '../Logement/Logement.css'
 import Accordeon from '../../components/Accordeon/Accordeon'
-import etoile from '../../assets/etoile.svg'
 
 import Rating from '../../components/Rating/Rating'
+import '../../components/Rating/Rating.css'
 import Galerie from '../../components/Galerie/Galerie'
-import Erreur from '../Erreur/Erreur'
+import etoile from '../../assets/etoile.svg'
+import etoileCouleur from '../../assets/etoileCouleur.svg'
 
 export default function Logement() {
   const { id } = useParams()
-  console.log(id)
+
   const navigation = useNavigate()
 
-  const [jsonData, setjsonData] = useState([])
+  const [location, setLocation] = useState(null)
+
+  const [imgPrincipale, setimgPrincipale] = useState(0)
+
+  const nextImage = () => {
+    setimgPrincipale(
+      imgPrincipale === location.pictures.length - 1 ? 0 : imgPrincipale + 1
+    )
+  }
+
+  const prevImage = () => {
+    setimgPrincipale(
+      imgPrincipale === 0 ? location.pictures.length - 1 : imgPrincipale - 1
+    )
+  }
 
   useEffect(() => {
     const getHome = async () => {
       const response = await fetch('/donnees-json/logements.json')
-      console.log(response)
+
       if (!response.ok) {
         const message = `An error has occured: ${response.status}`
         throw new Error(message)
@@ -27,11 +42,11 @@ export default function Logement() {
 
       const json = await response.json()
 
-      const idFiltered = json.filter((heberg) => heberg.id === id)
-      console.log(idFiltered)
-      setjsonData(idFiltered)
+      const idFiltered = json.find((heberg) => heberg.id === id)
 
-      if (idFiltered.length < 1) {
+      setLocation(idFiltered)
+
+      if (typeof idFiltered === 'undefined') {
         navigation('*')
       }
     }
@@ -40,55 +55,71 @@ export default function Logement() {
 
   return (
     <div className="logement-container">
-      <Galerie />
-      {jsonData &&
-        jsonData.map((item, index) => (
-          <>
-            <div className="hote">
-              <div className="bloc-title">
-                <h1 id={item.id} key={item.id}>
-                  {item.title}
-                </h1>
-                <p key={index} id={item.location}>
-                  {item.location}
-                </p>
-                <ul className="list-tags">
-                  {item.tags.map((tag, index) => (
-                    <Tags tags={tag} key={index} id={id} />
-                  ))}
-                </ul>
-              </div>
-              <div className="home-host">
-                <div className="bloc-host">
-                  <p key={index} id={index}>
-                    {item.host.name}
-                  </p>
-                  <img src={item.host.picture} alt="" />
-                </div>
+      {location && (
+        <>
+          <div className="galerie-container">
+            <Galerie
+              src={location.pictures[imgPrincipale]}
+              length={location.pictures.length}
+              imgPpale={imgPrincipale}
+              next={nextImage}
+              previous={prevImage}
+            />
+          </div>
 
-                <Rating />
-              </div>
-            </div>
-
-            <div className="accordeon-container">
-              <Accordeon title={'Description'} key={item.id} id={item.id}>
-                {item.description}
-              </Accordeon>
-
-              <Accordeon title={'Équipements'}>
-                {item.equipments.map((equip, index) => (
-                  <p
-                    equipments={equip}
-                    key={`${equip}-${index}`}
-                    id={`${equip}-${index}`}
-                  >
-                    {equip}
-                  </p>
+          <div className="hote">
+            <div className="bloc-title">
+              <h1>{location.title}</h1>
+              <p>{location.location}</p>
+              <ul className="list-tags">
+                {location.tags.map((tag, index) => (
+                  <Tags tags={tag} key={`${tag}-${index}`} id={id} />
                 ))}
-              </Accordeon>
+              </ul>
             </div>
-          </>
-        ))}
+            <div className="home-host">
+              <div className="bloc-host">
+                <p>{location.host.name}</p>
+                <img src={location.host.picture} alt="" />
+              </div>
+
+              <div className="notation">
+                <div className="note-etoiles">
+                  {[...Array(5)].map((star, index) => {
+                    let imgStar =
+                      location.rating > index ? etoileCouleur : etoile
+
+                    return (
+                      <Rating
+                        key={`${star}-${index}`}
+                        id={`${'item'}-${index}`}
+                        src={imgStar}
+                        className="colorful-star"
+                      />
+                    )
+                  })}
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div className="accordeon-container">
+            <Accordeon title={'Description'}>{location.description}</Accordeon>
+
+            <Accordeon title={'Équipements'}>
+              {location.equipments.map((equip, index) => (
+                <p
+                  equipments={equip}
+                  key={`${equip}-${index}`}
+                  id={`${equip}-${index}`}
+                >
+                  {equip}
+                </p>
+              ))}
+            </Accordeon>
+          </div>
+        </>
+      )}
     </div>
   )
 }
