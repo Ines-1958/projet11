@@ -2,6 +2,7 @@ import React from 'react'
 import { useState, useEffect } from 'react'
 import { NavLink } from 'react-router-dom'
 import '../CarteLocation/CarteLocation.css'
+import '../../../src/donnees-json/logements.json'
 
 export default function CarteLocation() {
   const [jsonData, setjsonData] = useState([])
