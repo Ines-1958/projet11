@@ -8,7 +8,9 @@ export default function CarteLocation() {
 
   useEffect(() => {
     const getHome = async () => {
-      const response = await fetch('./donnees-json/logements.json')
+      const response = await fetch(
+        'https://raw.githubusercontent.com/Ines-1958/projet11/b9e3840e17dda0262e8b70ec00dac8a03ca562d8/public/donnees-json/logements.json'
+      )
 
       if (!response.ok) {
         const message = `An error has occured: ${response.status}`
