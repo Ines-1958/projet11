@@ -2,14 +2,13 @@ import React from 'react'
 import { useState, useEffect } from 'react'
 import { NavLink } from 'react-router-dom'
 import '../CarteLocation/CarteLocation.css'
-import '../../../src/donnees-json/logements.json'
 
 export default function CarteLocation() {
   const [jsonData, setjsonData] = useState([])
 
   useEffect(() => {
     const getHome = async () => {
-      const response = await fetch('../../donnees-json/logements.json')
+      const response = await fetch('./donnees-json/logements.json')
 
       if (!response.ok) {
         const message = `An error has occured: ${response.status}`
