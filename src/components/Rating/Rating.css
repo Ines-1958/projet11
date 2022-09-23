@@ -16,3 +16,17 @@
     height: 15px;
   }
 }
+
+@media all and (min-width: 768px) and (max-width: 1024px) {
+  .notation .note-etoiles {
+    display: flex;
+    justify-content: flex-end;
+  }
+}
+
+@media (orientation: landscape) {
+  .notation .note-etoiles {
+    display: flex;
+    justify-content: flex-end;
+  }
+}

@@ -4,15 +4,23 @@ import '../Galerie/Galerie.css'
 export default function Galerie(props) {
   let galerieLength = props.length
 
+  const nextImage = () => {
+    props.funcSet(props.imgPpale === galerieLength - 1 ? 0 : props.imgPpale + 1)
+  }
+
+  const prevImage = () => {
+    props.funcSet(props.imgPpale === 0 ? galerieLength - 1 : props.imgPpale - 1)
+  }
+
   return (
     <>
       <div
         className={galerieLength <= 1 ? 'chevron-hidden' : 'chevron-visible'}
       >
-        <button className="previous btn" onClick={props.previous}>
+        <button className="previous btn" onClick={prevImage}>
           ＜
         </button>
-        <button className="next btn" onClick={props.next}>
+        <button className="next btn" onClick={nextImage}>
           ＞
         </button>
       </div>

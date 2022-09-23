@@ -30,3 +30,9 @@
     margin-right: 7px;
   }
 }
+
+@media all and (min-width: 768px) and (max-width: 1024px) {
+  .list-tags .tag-item {
+    font-size: 12px;
+  }
+}

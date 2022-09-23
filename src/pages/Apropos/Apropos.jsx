@@ -1,6 +1,6 @@
 import React from 'react'
 import '../Apropos/Apropos.css'
-import bgApropos from './bgApropos.png'
+import bgApropos from '../../assets/bgApropos.png'
 import Accordeon from '../../components/Accordeon/Accordeon'
 
 export default function Apropos() {
